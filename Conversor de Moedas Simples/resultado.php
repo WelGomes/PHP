@@ -17,7 +17,7 @@
                 header("Refresh: 0 ; index.php");
             } else {
                 $dolar = $real / 5.22;
-                echo"<p>Seus <b>R$: ". $real."</b> equivalem a <b>". number_format($dolar, 2, ',', '')."</b></p>";
+                echo"<p>Seus <b>R$: ". $real."</b> equivalem a <b>US$: ". number_format($dolar, 2, ',', '')."</b></p>";
             }
             echo"<b>Cotação fixa de R$: 5,22</b> informada diretamente no código."
         ?>
