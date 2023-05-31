@@ -27,7 +27,7 @@
                 Cotação obtida diretamente do site do <b>Banco Central do Brasil</b>";
             }
         ?>
-        <a href="javascript:window.history.back()"><button type="submit">Voltar</button></a>
+        <button type="submit" onclick="javascript:window.history.back()">Voltar</button>
     </main>
 </body>
 </html>
