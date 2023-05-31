@@ -21,7 +21,7 @@
             }
             echo"<b>Cotação fixa de R$: 5,22</b> informada diretamente no código."
         ?>
-        <a href="javascript:window.history.back()"><button type="submit">Voltar</button></a>
+        <button type="submit" onclick="javascript:window.history.back()">Voltar</button>
     </main>
 </body>
 </html>
