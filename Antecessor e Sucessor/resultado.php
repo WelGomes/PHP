@@ -25,7 +25,7 @@
                 O seu sucessor é <b>". ($numero + 1)."</b>";
             }
         ?>
-        <a href="index.php"><button type="submit">Voltar</button></a>
+        <button type="submit" onclick="javascript:window.history.back()">Voltar</button>
     </main>
 </body>
 </html>
