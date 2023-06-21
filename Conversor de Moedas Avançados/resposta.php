@@ -11,12 +11,16 @@
     <main>
         <h1>Conversor de Moedas Avançado</h1>
         <?php
-            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=%2705-23-2023%27&@dataFinalCotacao=%2705-30-2023%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+            $inicio = date("m-d-Y", strtotime("-7 days"));
+            $fim = date("m-d-Y");
+            $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=%27'.$inicio.'%27&@dataFinalCotacao=%27'.$fim.'%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
+            
             $dados = json_decode(file_get_contents($url), true);
-           
-            $cotacao = $dados['value'][0]['cotacaoCompra'];
+
+            $cotacao = $dados["value"][0]["cotacaoCompra"];
     
             $real = $_POST['real'];
+            $dolar = $real / $cotacao;
 
             if($real == '' || $real < 0){
                 echo "<script>alert('ERRO! Insira um valor valido');</script>";
