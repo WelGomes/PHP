@@ -11,7 +11,7 @@
     <main>
         <h1>Conversor de Moedas v1.0</h1>
         <?php
-            $real = $_POST['real'];
+            $real = $_POST['real'] ?? 0;
             if($real == '' || $real < 0){
                 echo"<script>alert('ERRO! Insira um valor valido')</script>";
                 header("Refresh: 0 ; index.php");
