@@ -19,7 +19,7 @@
 
             $cotacao = $dados["value"][0]["cotacaoCompra"];
     
-            $real = $_POST['real'];
+            $real = $_POST['real'] ?? 0;
             $dolar = $real / $cotacao;
 
             if($real == '' || $real < 0){
